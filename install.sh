@@ -2,10 +2,10 @@
 
 source $HOME/.nix-profile/etc/profile.d/nix.sh
 
-echo "[+] Downloading Meslo Nerd Font"
-wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip
-unzip Meslo.zip -d ~/.fonts
-rm -rf /usr/share/fonts/*
+echo "[+] Downloading MesloLGL Nerd Font"
+wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Meslo/L/Bold/MesloLGLNerdFont-Bold.ttf
+mkdir ~/.fonts
+cp ./MesloLGLNerdFont-Bold.ttf ~/.fonts/*
 fc-cache -fv
 echo "[!] Done!"
 
