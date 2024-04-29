@@ -9,18 +9,6 @@ cp ./MesloLGLNerdFont-Bold.ttf ~/.fonts/*
 fc-cache -fv
 echo "[!] Done!"
 
-wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
-wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-
-mkdir ~/.config/fontconfig
-mkdir ~/.local/share/fonts
-
-mv PowerlineSymbols.otf ~/.local/share/fonts/
-fc-cache -vf ~/.local/share/fonts/
-mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 echo "[+] Downloading Neovim from Nix Packages"
 nix-env -iA nixpkgs.neovim
 echo "[!] Done!"
@@ -29,6 +17,8 @@ echo "[+] Downloading Bun"
 curl -fsSL https://bun.sh/install | bash
 source ~/.bashrc
 echo "[!] Done"
+
+
 current_dir="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)"
 dotfiles_source="${current_dir}/gitpod-home-files"
 
